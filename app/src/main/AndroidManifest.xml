@@ -14,6 +14,10 @@
         <activity
             android:name=".HomeActivity"
             android:theme="@style/AppTheme.noActionBar" />
+        <activity android:name=".TaskUpdateActivity"
+            android:theme="@style/AppTheme.noActionBar"/>
+        <activity android:name=".TaskInfoActivity"
+            android:theme="@style/AppTheme.noActionBar"/>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.noActionBar">
