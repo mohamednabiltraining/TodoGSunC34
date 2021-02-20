@@ -18,6 +18,10 @@ interface TasksDao {
     fun addTask(task:Task)
     @Update
     fun updateTask(task:Task)
+
+    @Query("UPDATE Task SET title =:titleUpdate, description = :descUpdate, isCompleted =:completedUpdate where id like :id")
+    fun update(id:Int,titleUpdate:String,descUpdate:String,completedUpdate:Boolean)
+
     @Delete
     fun deleteTask(task: Task)
 
