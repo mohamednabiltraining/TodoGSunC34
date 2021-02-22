@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 
 open class BaseActivity :AppCompatActivity() {
     fun showDialoge(title:String?=null,
@@ -39,26 +40,24 @@ open class BaseActivity :AppCompatActivity() {
         builder.show()
     }
 
-//    fun makeSnackBar(
-//        message: String,
-//        actionSting:String?=null,
-//        click: View.OnClickListener?=null){
-//
-//        val snackbar =
-//            Snackbar.make(root,message, Snackbar.LENGTH_LONG)
-//        if(actionSting!=null)
-//            snackbar.setAction(actionSting,click)
-//        snackbar.show()
-//    }
-//    fun makeSnackBar(messageId: Int,
-//                     actionSting:Int?=null,
-//                     click: View.OnClickListener?=null){
-//
-//        val snackbar = Snackbar.make(root,messageId, Snackbar.LENGTH_LONG)
-//        if(actionSting!=null)
-//            snackbar.setAction(actionSting,click)
-//        snackbar.show()
-//    }
+   fun makeSnackBar(
+        message: String, actionSting:String?=null,
+        click: View.OnClickListener?=null, view :View){
+        val snackbar = Snackbar.make(view,message,5000)
+        if(actionSting!=null)
+            snackbar.setAction(actionSting,click)
+        snackbar.show()
+    }
+    fun makeSnackBar(messageId: Int,
+                     actionSting:Int?=null,
+                     click: View.OnClickListener?=null
+                     ,view: View ){
+
+        val snackbar = Snackbar.make(view,messageId, 5000)
+        if(actionSting!=null)
+            snackbar.setAction(actionSting,click)
+        snackbar.show()
+    }
 
     fun makeToast(message:String){
         Toast.makeText(this,
