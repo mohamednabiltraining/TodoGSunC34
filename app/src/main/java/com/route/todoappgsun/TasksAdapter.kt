@@ -33,6 +33,11 @@ class TasksAdapter(var tasks:List<Task>)
         notifyDataSetChanged()
     }
 
+    fun getTaskposition(position: Int) :Task {
+     return tasks.get(position)
+
+    }
+
     class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
         val title:TextView = itemView.title
         val completed :CheckBox = itemView.completed

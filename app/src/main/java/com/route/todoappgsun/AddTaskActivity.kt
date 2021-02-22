@@ -34,7 +34,7 @@ class AddTaskActivity : BaseActivity() {
         })
         desc_layout.editText?.addTextChangedListener(object :TextWatcher{
             override fun afterTextChanged(s: Editable?) {
-                desc_layout.error = null
+                desc_layout.error= null
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
